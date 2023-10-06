@@ -1,0 +1,20 @@
+.EventGallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.EventCard {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.EventCard img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add styles for event cards here */

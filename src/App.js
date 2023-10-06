@@ -1,25 +1,58 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import EventGallery from './EventGallery';
+import EventModal from './EventModal';
 import './App.css';
+import './Header.css';
 
-function App() {
+const App = () => {
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('events.json'); // Replace with your API endpoint or JSON file URL
+        const data = await response.json();
+        setEvents(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const openModal = (event) => {
+    setSelectedEvent(event);
+  };
+
+  const closeModal = () => {
+    setSelectedEvent(null);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="Header">
+        <div className="Hero">
+          <h1>Events at Christ</h1>
+          {/* <img src="https://www.bwallpaperhd.com/wp-content/uploads/2021/01/NashPoint.jpg" alt="Hero Image" /> */}
+        </div>
       </header>
+      {loading ? (
+        <p>Loading events...</p>
+      ) : (
+        <>
+          <EventGallery events={events} openModal={openModal} />
+          {selectedEvent && (
+            <EventModal event={selectedEvent} closeModal={closeModal} />
+          )}
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;

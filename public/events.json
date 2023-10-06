@@ -1,0 +1,162 @@
+[
+    {
+        "eventName": "Open House",
+        "date": "2023-10-15",
+        "time": "10:00 AM - 2:00 PM",
+        "location": "Main Campus",
+        "image": "https://via.placeholder.com/404",
+        "description": "Join us for an exciting open house event where you can explore our campus, meet faculty and students, and learn about our programs."
+    },
+    {
+        "eventName": "Career Fair",
+        "date": "2023-11-05",
+        "time": "1:00 PM - 4:00 PM",
+        "location": "Student Center",
+        "image": "https://via.placeholder.com/404",
+        "description": "Connect with employers from various industries and explore internship and job opportunities."
+    },
+    {
+        "eventName": "Annual Sports Day",
+        "date": "2023-12-10",
+        "time": "9:00 AM - 5:00 PM",
+        "location": "Sports Complex",
+        "image": "https://via.placeholder.com/404",
+        "description": "Cheer on your favorite teams and enjoy a day filled with exciting sports competitions."
+    },
+    {
+        "eventName": "Spring Music Festival",
+        "date": "2024-04-20",
+        "time": "6:00 PM - 10:00 PM",
+        "location": "Amphitheater",
+        "image": "https://via.placeholder.com/404",
+        "description": "Experience a night of live music performances by talented students and local artists."
+    },
+    {
+        "eventName": "Science Fair",
+        "date": "2023-11-20",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "Science Building",
+        "image": "https://via.placeholder.com/404",
+        "description": "Explore innovative science projects and experiments at our annual science fair."
+    },
+    {
+        "eventName": "Winter Ball",
+        "date": "2023-12-18",
+        "time": "7:00 PM - 11:00 PM",
+        "location": "Grand Ballroom",
+        "image": "https://via.placeholder.com/404",
+        "description": "Dance the night away at our elegant Winter Ball event."
+    },
+    {
+        "eventName": "Science Fair",
+        "date": "2023-11-20",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "Science Building",
+        "image": "https://via.placeholder.com/404",
+        "description": "Explore innovative science projects and experiments at our annual science fair."
+    },
+    {
+        "eventName": "Winter Ball",
+        "date": "2023-12-18",
+        "time": "7:00 PM - 11:00 PM",
+        "location": "Grand Ballroom",
+        "image": "https://via.placeholder.com/404",
+        "description": "Dance the night away at our elegant Winter Ball event."
+    },
+    {
+        "eventName": "Orientation Day",
+        "date": "2023-09-30",
+        "time": "9:00 AM - 4:00 PM",
+        "location": "Main Campus",
+        "image": "https://via.placeholder.com/404",
+        "description": "Join us for the orientation day to get to know the college campus and resources."
+    },
+    {
+        "eventName": "Student Art Exhibition",
+        "date": "2023-10-15",
+        "time": "2:00 PM - 6:00 PM",
+        "location": "Art Gallery",
+        "image": "https://via.placeholder.com/404",
+        "description": "View the creative artworks of our talented students in this art exhibition."
+    },
+    {
+        "eventName": "Open House",
+        "date": "2023-10-15",
+        "time": "10:00 AM - 2:00 PM",
+        "location": "Main Campus",
+        "image": "https://via.placeholder.com/404",
+        "description": "Join us for an exciting open house event where you can explore our campus, meet faculty and students, and learn about our programs."
+    },
+    {
+        "eventName": "Career Fair",
+        "date": "2023-11-05",
+        "time": "1:00 PM - 4:00 PM",
+        "location": "Student Center",
+        "image": "https://via.placeholder.com/404",
+        "description": "Connect with employers from various industries and explore internship and job opportunities."
+    },
+    {
+        "eventName": "Annual Sports Day",
+        "date": "2023-12-10",
+        "time": "9:00 AM - 5:00 PM",
+        "location": "Sports Complex",
+        "image": "https://via.placeholder.com/404",
+        "description": "Cheer on your favorite teams and enjoy a day filled with exciting sports competitions."
+    },
+    {
+        "eventName": "Spring Music Festival",
+        "date": "2024-04-20",
+        "time": "6:00 PM - 10:00 PM",
+        "location": "Amphitheater",
+        "image": "https://via.placeholder.com/404",
+        "description": "Experience a night of live music performances by talented students and local artists."
+    },
+    {
+        "eventName": "Science Fair",
+        "date": "2023-11-20",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "Science Building",
+        "image": "https://via.placeholder.com/404",
+        "description": "Explore innovative science projects and experiments at our annual science fair."
+    },
+    {
+        "eventName": "Winter Ball",
+        "date": "2023-12-18",
+        "time": "7:00 PM - 11:00 PM",
+        "location": "Grand Ballroom",
+        "image": "https://via.placeholder.com/404",
+        "description": "Dance the night away at our elegant Winter Ball event."
+    },
+    {
+        "eventName": "Science Fair",
+        "date": "2023-11-20",
+        "time": "10:00 AM - 3:00 PM",
+        "location": "Science Building",
+        "image": "https://via.placeholder.com/404",
+        "description": "Explore innovative science projects and experiments at our annual science fair."
+    },
+    {
+        "eventName": "Winter Ball",
+        "date": "2023-12-18",
+        "time": "7:00 PM - 11:00 PM",
+        "location": "Grand Ballroom",
+        "image": "https://via.placeholder.com/404",
+        "description": "Dance the night away at our elegant Winter Ball event."
+    },
+    {
+        "eventName": "Orientation Day",
+        "date": "2023-09-30",
+        "time": "9:00 AM - 4:00 PM",
+        "location": "Main Campus",
+        "image": "https://via.placeholder.com/404",
+        "description": "Join us for the orientation day to get to know the college campus and resources."
+    },
+    {
+        "eventName": "Student Art Exhibition",
+        "date": "2023-10-15",
+        "time": "2:00 PM - 6:00 PM",
+        "image": "https://via.placeholder.com/404",
+        "location": "Art Gallery",
+        "description": "View the creative artworks of our talented students in this art exhibition."
+    }
+]
