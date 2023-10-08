@@ -83,11 +83,9 @@ export default function Home() {
                                     <CloseIcon />
                                 </IconButton>
                                 <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                                    Sound
+                                    New Event
                                 </Typography>
-                                <Button autoFocus color="inherit" onClick={handleClose}>
-                                    Save Event
-                                </Button>
+
                             </Toolbar>
                         </AppBar>
                         <List style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>

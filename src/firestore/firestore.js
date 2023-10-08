@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { collection, addDoc, getFirestore, getDocs, query, where, orderBy } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const analytics = getAnalytics(app);
-
+const auth = getAuth(app);
 
 async function addData(event, collectionName) {
     try {
@@ -41,4 +42,4 @@ async function getAllDataFromCollection(collectionName) {
 
 
 // export default addData;
-export { addData, getAllDataFromCollection };
+export { addData, getAllDataFromCollection, auth };

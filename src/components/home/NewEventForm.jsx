@@ -83,6 +83,8 @@ export function NewEventForm({ handleClose }) {
         }
 
 
+
+
         //push to database
         addData({
             eventName: eventName,
@@ -178,11 +180,15 @@ export function NewEventForm({ handleClose }) {
             <Typography>
                 Event Image
             </Typography>
-            <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} onChange={(event) => console.log(event.target.files[0])}>
+
+            {/* <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} onChange={(event) => console.log(event.target.files[0])}>
                 Upload file
                 <VisuallyHiddenInput type="file" accept="image/jpeg,image/png,image/gif" />
-            </Button>
-
+            </Button> */}
+            <Input placeholder="Image URL"
+                variant='outlined'
+                value={eventImage}
+                onChange={(event) => setEventImage(event.target.value)} />
             <hr />
 
 
@@ -219,7 +225,7 @@ export function NewEventForm({ handleClose }) {
                 <hr />
 
             </LocalizationProvider>
-            <Button autoFocus variant='contained' onClick={handleSubmit}>
+            <Button variant='contained' onClick={handleSubmit}>
                 Save Event
             </Button>
         </>
