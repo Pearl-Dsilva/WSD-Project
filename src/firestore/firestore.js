@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { collection, addDoc, getFirestore, getDocs, query, where, orderBy } from "firebase/firestore";
+import { collection, addDoc, getFirestore, getDocs, query, where, orderBy, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,12 +34,19 @@ async function addData(event, collectionName) {
     }
 }
 
+async function updateData(doc_id, document) {
+    await updateDoc(doc(db, "events", doc_id), document);
+}
+
 async function getAllDataFromCollection(collectionName) {
     const q = query(collection(db, collectionName), orderBy("date", "asc"))
     const querySnapshot = await getDocs(q);
     return querySnapshot;
 }
 
+async function deleteDocument(document_id) {
+    await deleteDoc(doc(db, "events", document_id));
+}
 
 // export default addData;
-export { addData, getAllDataFromCollection, auth };
+export { addData, getAllDataFromCollection, auth, updateData, deleteDocument };

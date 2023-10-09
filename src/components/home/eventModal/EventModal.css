@@ -12,7 +12,8 @@
 }
 
 .ModalContent {
-    background-color: white;
+    background-color: #333;
+    color: white;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -22,5 +23,3 @@
     max-width: 100%;
     height: auto;
 }
-
-/* Add styles for the modal here */

@@ -3,8 +3,8 @@ import Login from './components/login/login';
 import Signup from './components/signup/signup';
 import Home from './components/home/home';
 import './App.css';
-import './Header.css';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import '.././src/components/home/Header.css';
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { auth } from './firestore/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
@@ -19,9 +19,21 @@ const App = () => {
     });
   }, [])
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const currentLocation = window.location.href.split('/');
+
+    if ((currentLocation[currentLocation.length - 1] === 'login' || currentLocation[currentLocation.length - 1] === 'signup') && user) {
+      navigate('/', { replace: true })
+    }
+  }, [user])
+
+
   return (
     <Routes>
-      <Route path="/" element={user ? <Home /> : <Navigate to="/login" replace />} />
+      <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} />
+      {/* <Route path="/" element={<Home auth={auth} />} /> */}
       <Route path="/login" element={<Login auth={auth} />} />
       <Route path="/signup" element={<Signup auth={auth} />} />
     </Routes>

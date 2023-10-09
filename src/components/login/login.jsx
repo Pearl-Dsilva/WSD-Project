@@ -19,6 +19,9 @@ export default function Login({ auth }) {
 
     const navigate = useNavigate()
 
+    // if(window.location.href)
+
+
     function onSubmit() {
         const emailValidation = isValidEmail(email)
 

@@ -4,6 +4,7 @@ import { Widgets } from '@mui/icons-material';
 import { Button } from '@mui/material';
 
 const EventGallery = ({ events, openModal }) => {
+    console.log(events)
     return (
         <div className="EventGallery">
             {events.map((event, index) => (

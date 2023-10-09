@@ -74,6 +74,15 @@ export function NewEventForm({ handleClose }) {
             return;
         }
 
+
+        if (!isValidDate(eventDate.toDate().toLocaleDateString)) {
+            setErrorState({
+                error: true,
+                reason: 'Date must be ahead of current date'
+            });
+            return;
+        }
+
         if (!isValidTimeRange(eventTimeStart, eventTimeEnd)) {
             setErrorState({
                 error: true,

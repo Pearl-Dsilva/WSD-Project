@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import EventGallery from '../../EventGallery';
-import EventModal from '../../EventModal';
+import EventGallery from './eventGallery/EventGallery';
+import EventModal from './eventModal/EventModal';
 import { getAllDataFromCollection } from '../../firestore/firestore';
 import { AppBar, Button, Dialog, Fab, IconButton, List, Slide, Toolbar, Typography, styled } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
-
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import { NewEventForm } from './NewEventForm';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function Home() {
+export default function Home({ auth }) {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,7 +28,7 @@ export default function Home() {
             .then((results) => {
                 const tempResultArray = []
                 results.forEach((res) => {
-                    tempResultArray.push(res.data())
+                    tempResultArray.push({ ...res.data(), id: res.id })
                 })
                 setEvents(tempResultArray);
                 setLoading(false);
@@ -36,6 +38,9 @@ export default function Home() {
             });
 
     }, []);
+
+
+    const navigate = useNavigate();
 
     const openModal = (event) => {
         setSelectedEvent(event);
@@ -54,11 +59,23 @@ export default function Home() {
         setOpen(true);
     }
 
+    const logout = () => {
+        signOut(auth).then(() => {
+            navigate("/login", { replace: true })
+        })
+    }
+
     return (
         <div className="App">
             <header className="Header">
-                <div className="Hero">
-                    <h1 style={{ backgroundImage: 'url()' }}>Events at Christ</h1>
+                <div className="Hero" style={{ display: 'flex' }}>
+                    <h1 style={{ flex: 1 }}>Events at Christ</h1>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton aria-label="logout" onClick={logout}>
+                            <LogoutIcon color="action" />
+                        </IconButton>
+                        {/* <Button variant='contained' color='error' onClick={logout}>Logout</Button> */}
+                    </div>
                     {/* <img src="https://www.bwallpaperhd.com/wp-content/uploads/2021/01/NashPoint.jpg" alt="Hero Image" /> */}
                 </div>
             </header>
@@ -95,7 +112,7 @@ export default function Home() {
                     </Dialog>
                     <EventGallery events={events} openModal={openModal} />
                     {selectedEvent && (
-                        <EventModal event={selectedEvent} closeModal={closeModal} />
+                        <EventModal event={selectedEvent} closeModal={closeModal} handleOpen={handleOpen} />
                     )}
                     <Fab color="primary" aria-label="add" style={{
                         right: 20,

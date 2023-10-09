@@ -4,18 +4,16 @@ function isValidName(name) {
 
 
 
-// dd-mm-yyyy
+// date must be ahead of current date
 function isValidDate(date) {
-
-    return true;
-
-    // compare date with current, it must always be ahead of current
-
-    // return new RegExp("^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$").test(startDate);
+    const currentDate = new Date().toLocaleDateString();
+    if (currentDate < date) return true;
+    return false;
 }
-//TODO:isValidTimeRange
+//start time less than end time
 function isValidTimeRange(startTime, endTime) {
-    return true;
+    if (startTime < endTime) return true;
+    return false;
 }
 
 function isValidEmail(email) {
