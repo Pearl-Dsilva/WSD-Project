@@ -19,13 +19,25 @@ function isValidTimeRange(startTime, endTime) {
 function isValidEmail(email) {
     return new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$").test(email);
 }
+
+// function isEmailAlreadyExists(email){
+
+// }
+
 function isValidPassword(password) {
-    if (password.length < 8) return ({ result: false, message: "Length is less than 8" })
-    if (!new RegExp("[a-z]").test(password)) return ({ result: false, message: "Missing lowercase characters" })
-    if (!new RegExp("[A-Z]").test(password)) return ({ result: false, message: "Missing uppercase characters" })
-    if (!new RegExp("[0-9]").test(password)) return ({ result: false, message: "Missing digits" })
-    if (!new RegExp("[!@#$%^&*?]").test(password)) return ({ result: false, message: "Missing special characters" })
+    if (password.length < 8) return ({ result: false, message: "Password Length is less than 8" })
+    if (!new RegExp("[a-z]").test(password)) return ({ result: false, message: "Missing lowercase characters in password" })
+    if (!new RegExp("[A-Z]").test(password)) return ({ result: false, message: "Missing uppercase characters in password" })
+    if (!new RegExp("[0-9]").test(password)) return ({ result: false, message: "Missing digits in password" })
+    if (!new RegExp("[!@#$%^&*?]").test(password)) return ({ result: false, message: "Missing special characters in password" })
     return { result: true, message: "" }
 }
 
-export { isValidDate, isValidName, isValidTimeRange, isValidEmail, isValidPassword }
+function isPasswordMatch(password, confirmPassword) {
+    if (!password === confirmPassword) return ({ result: false, message: "Password does not match" })
+    return { result: true, message: "" }
+}
+
+
+
+export { isValidDate, isValidName, isValidTimeRange, isValidEmail, isValidPassword, isPasswordMatch }

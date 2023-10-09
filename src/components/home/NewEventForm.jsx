@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 
 import dayjs from 'dayjs';
+import "./home.css"
 
 import { Button, Typography, styled } from '@mui/material';
 import { Input, Textarea } from '@mui/joy';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -42,8 +41,6 @@ export function NewEventForm({ handleClose }) {
 
     function handleSubmit() {
         // validate data
-
-
         if (!isValidName(eventName)) {
             setErrorState({
                 error: true,
@@ -145,7 +142,7 @@ export function NewEventForm({ handleClose }) {
             <Textarea
                 minRows={2}
                 maxRows={3}
-                placeholder="Heyy There"
+                placeholder="Description..."
                 size="md"
                 sx={{
                     '--Textarea-focusedInset': 'var(--any, )',
@@ -173,7 +170,7 @@ export function NewEventForm({ handleClose }) {
             </Typography>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <DatePicker
-                    label="Controlled picker"
+                    label="Select Date"
                     value={eventDate}
                     onChange={(newValue) => setEventDate(newValue)} />
             </LocalizationProvider>
@@ -234,7 +231,7 @@ export function NewEventForm({ handleClose }) {
                 <hr />
 
             </LocalizationProvider>
-            <Button variant='contained' onClick={handleSubmit}>
+            <Button variant='contained' color='inherit' onClick={handleSubmit}>
                 Save Event
             </Button>
         </>

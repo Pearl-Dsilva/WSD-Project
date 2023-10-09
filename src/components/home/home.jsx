@@ -11,6 +11,8 @@ import { NewEventForm } from './NewEventForm';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
+import './home.css';
+
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -88,8 +90,9 @@ export default function Home({ auth }) {
                         open={open}
                         onClose={handleClose}
                         TransitionComponent={Transition}
+
                     >
-                        <AppBar sx={{ position: 'relative' }}>
+                        <AppBar color="transparent" sx={{ position: 'static' }}>
                             <Toolbar>
                                 <IconButton
                                     edge="start"
@@ -114,10 +117,10 @@ export default function Home({ auth }) {
                     {selectedEvent && (
                         <EventModal event={selectedEvent} closeModal={closeModal} handleOpen={handleOpen} />
                     )}
-                    <Fab color="primary" aria-label="add" style={{
+                    <Fab color="inherit" aria-label="add" style={{
                         right: 20,
                         bottom: 20,
-                        position: 'fixed'
+                        position: 'fixed',
                     }} onClick={() => handleOpen()}>
                         <AddIcon />
                     </Fab>

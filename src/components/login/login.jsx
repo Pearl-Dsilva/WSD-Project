@@ -34,7 +34,7 @@ export default function Login({ auth }) {
             handleOpen(passwordValidation.message)
             return;
         }
-        console.log("reched hereeee")
+        // console.log("reched hereeee")
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
@@ -46,8 +46,8 @@ export default function Login({ auth }) {
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log(errorCode)
-                console.log(errorMessage)
+                // console.log(errorCode)
+                // console.log(errorMessage)
                 if (errorCode === "auth/invalid-login-credentials") {
                     handleOpen(
                         "Invalid Credentials"

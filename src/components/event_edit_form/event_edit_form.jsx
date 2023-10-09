@@ -123,25 +123,6 @@ export function EventEditForm({ open, handleClose, event }) {
             })}`
         })
 
-        //push to database
-        // addData({
-        //     eventName: eventName,
-        //     description: eventDescription,
-        //     image: eventImage === '' ? "https://via.placeholder.com/404" : eventImage,
-        //     location: eventLocation,
-        //     date: eventDate.toDate().toLocaleDateString('en-CA').replace('/', '-').replace('/', '-'),
-        //     time: `${eventTimeStart.toDate().toLocaleString("en-US", {
-        //         hour: "numeric",
-        //         minute: "numeric",
-        //         hour12: true,
-        //     })} - ${eventTimeEnd.toDate().toLocaleString("en-US", {
-        //         hour: "numeric",
-        //         minute: "numeric",
-        //         hour12: true,
-        //     })}`
-        // }, "events")
-
-        // if valid, close dialog
         handleClose();
 
         // else show error

@@ -32,8 +32,8 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} />
-      {/* <Route path="/" element={<Home auth={auth} />} /> */}
+      {/* <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} /> */}
+      <Route path="/" element={<Home auth={auth} />} />
       <Route path="/login" element={<Login auth={auth} />} />
       <Route path="/signup" element={<Signup auth={auth} />} />
     </Routes>
