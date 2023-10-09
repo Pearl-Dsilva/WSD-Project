@@ -2,6 +2,7 @@
 import Login from './components/login/login';
 import Signup from './components/signup/signup';
 import Home from './components/home/home';
+import Landing from '../src/landingPage/landing'
 import './App.css';
 import '.././src/components/home/Header.css';
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
@@ -32,10 +33,11 @@ const App = () => {
 
   return (
     <Routes>
-      {/* <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} /> */}
-      <Route path="/" element={<Home auth={auth} />} />
+      <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} />
+      {/* <Route path="/" element={<Home auth={auth} />} /> */}
       <Route path="/login" element={<Login auth={auth} />} />
       <Route path="/signup" element={<Signup auth={auth} />} />
+      <Route path="/landing" element={<Landing auth={auth} />} />
     </Routes>
   )
 };

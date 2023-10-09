@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
-import { isConfirmPasswordValid, isPasswordMatch, isValidEmail, isValidPassword } from "../../misc/validation";
+import { isPasswordMatch, isValidEmail, isValidPassword } from "../../misc/validation";
 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material";
 
 export default function Signup({ auth }) {
@@ -19,7 +19,6 @@ export default function Signup({ auth }) {
     function handleSubmit() {
 
         const emailValidation = isValidEmail(email)
-        // const emailAlreadyExistsValidation = isEmailAlreadyExists(email)
         if (!emailValidation) {
             handleOpen("Invalid Email")
             return;
@@ -35,6 +34,7 @@ export default function Signup({ auth }) {
             handleOpen(cofirmPasswordValidation.message)
             return;
         }
+        // TODO:
         const passwordMatch = isPasswordMatch(password, confirmPassword)
         if (!passwordMatch.result) {
             handleOpen(cofirmPasswordValidation.message)

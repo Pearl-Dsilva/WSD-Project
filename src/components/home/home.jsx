@@ -3,11 +3,12 @@ import EventGallery from './eventGallery/EventGallery';
 import EventModal from './eventModal/EventModal';
 import { getAllDataFromCollection } from '../../firestore/firestore';
 import { AppBar, Button, Dialog, Fab, IconButton, List, Slide, Toolbar, Typography, styled } from '@mui/material';
+import { NewEventForm } from './NewEventForm';
+
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-import { NewEventForm } from './NewEventForm';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -82,7 +83,7 @@ export default function Home({ auth }) {
                 </div>
             </header>
             {loading ? (
-                <p style={{ color: 'white' }}>Loading events...</p>
+                <p style={{ color: 'white', fontSize: "30" }}>Loading events...</p>
             ) : (
                 <>
                     <Dialog

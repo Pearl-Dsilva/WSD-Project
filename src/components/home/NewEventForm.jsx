@@ -187,10 +187,6 @@ export function NewEventForm({ handleClose }) {
                 Event Image
             </Typography>
 
-            {/* <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} onChange={(event) => console.log(event.target.files[0])}>
-                Upload file
-                <VisuallyHiddenInput type="file" accept="image/jpeg,image/png,image/gif" />
-            </Button> */}
             <Input placeholder="Image URL"
                 variant='outlined'
                 value={eventImage}

@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './EventModal.css';
-import { AppBar, Button, Dialog, IconButton, List, Slide, Toolbar, Typography } from '@mui/material';
+import { Button, IconButton, Slide } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { NewEventForm } from '../NewEventForm';
-import CloseIcon from '@mui/icons-material/Close';
 import { EventEditForm } from '../../event_edit_form/event_edit_form';
 import { deleteDocument } from '../../../firestore/firestore';
 

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 import dayjs from 'dayjs';
+import "../home/home.css"
 
 import { AppBar, Button, Dialog, IconButton, List, Slide, Toolbar, Typography, styled } from '@mui/material';
 import { Input, Textarea } from '@mui/joy';
-import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers';
@@ -12,7 +12,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import CloseIcon from '@mui/icons-material/Close';
 
 import { isValidDate, isValidName, isValidTimeRange } from '../../misc/validation';
-import { addData, updateData } from '../../firestore/firestore';
+import { updateData } from '../../firestore/firestore';
 
 export const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
@@ -136,7 +136,7 @@ export function EventEditForm({ open, handleClose, event }) {
                 onClose={handleClose}
                 TransitionComponent={Transition}
             >
-                <AppBar sx={{ position: 'relative' }}>
+                <AppBar color="transparent" sx={{ position: 'relative' }}>
                     <Toolbar>
                         <IconButton
                             edge="start"
@@ -224,10 +224,6 @@ export function EventEditForm({ open, handleClose, event }) {
                         Event Image
                     </Typography>
 
-                    {/* <Button component="label" variant="contained" startIcon={<CloudUploadIcon />} onChange={(event) => console.log(event.target.files[0])}>
-                Upload file
-                <VisuallyHiddenInput type="file" accept="image/jpeg,image/png,image/gif" />
-            </Button> */}
                     <Input placeholder="Image URL"
                         variant='outlined'
                         value={eventImage}
@@ -268,7 +264,7 @@ export function EventEditForm({ open, handleClose, event }) {
                         <hr />
 
                     </LocalizationProvider>
-                    <Button variant='contained' onClick={handleSubmit}>
+                    <Button variant='contained' color='inherit' onClick={handleSubmit}>
                         Save Event
                     </Button>
                 </List>
