@@ -7,10 +7,11 @@ import Facebook from './images/Facebook.png';
 import Twitter from './images/TwitterX.png';
 import Email from './images/Email.png';
 import Instagram from './images/Instagram.png';
-// import Favicon from './favicon.png';
+
 
 
 function Landing() {
+
   const divStyle = {
     backgroundImage: `url(${bgimage})`, // Use the imported image in the background-image property
     // Other CSS styles for your component
@@ -23,8 +24,8 @@ function Landing() {
             <img src={logo} alt="Logo" /> {/* Replace 'your-logo.png' with your logo's URL or file path */}
           </div>
           <div className="navbar-right">
-            <a href="#"><i className="fas fa-sign-in-alt"></i> Login</a>
-            <a href="#"><i className="fas fa-user-plus"></i> Sign Up</a>
+            <a href="/login"><i className="fas fa-sign-in-alt" ></i> Login</a>
+            <a href="/signup"><i className="fas fa-user-plus"></i> Sign Up</a>
           </div>
         </div>
       </nav>

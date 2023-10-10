@@ -25,19 +25,26 @@ const App = () => {
   useEffect(() => {
     const currentLocation = window.location.href.split('/');
 
+    //   if ((currentLocation[currentLocation.length - 1] === 'login' || currentLocation[currentLocation.length - 1] === 'signup') && user) {
+    //     navigate('/', { replace: true })
+    //   }
+    // }, [user])
+
     if ((currentLocation[currentLocation.length - 1] === 'login' || currentLocation[currentLocation.length - 1] === 'signup') && user) {
-      navigate('/', { replace: true })
+      navigate('/home', { replace: true })
     }
   }, [user])
 
 
   return (
     <Routes>
-      <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} />
+      {/* <Route path="/" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} /> */}
+      <Route path="/home" element={user ? <Home auth={auth} /> : <Navigate to="/login" replace />} />
       {/* <Route path="/" element={<Home auth={auth} />} /> */}
       <Route path="/login" element={<Login auth={auth} />} />
       <Route path="/signup" element={<Signup auth={auth} />} />
-      <Route path="/landing" element={<Landing auth={auth} />} />
+      <Route path="/" element={<Landing auth={auth} />} />
+      {/* <Route path="/landing" element={<Landing auth={auth} />} /> */}
     </Routes>
   )
 };

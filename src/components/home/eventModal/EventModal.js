@@ -56,7 +56,7 @@ const EventModal = ({ event, closeModal }) => {
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                         <Button variant='contained' color='error' onClick={closeModal}>Close</Button>
                         <Button variant='contained' color='success' >Book Ticket</Button>
-                        //TODO:button to pay
+                        {/* TODO:button to pay */}
                     </div>
                 </div>
             </div>

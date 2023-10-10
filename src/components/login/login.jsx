@@ -41,7 +41,8 @@ export default function Login({ auth }) {
                 const user = userCredential.user;
                 // ...
                 console.log(userCredential)
-                navigate('/', { replace: true })
+                // navigate('/', { replace: true })
+                navigate('/home', { replace: true })
             })
             .catch((error) => {
                 const errorCode = error.code;

@@ -46,7 +46,8 @@ export default function Signup({ auth }) {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log("User created successfully")
-                navigate('/', { replace: true })
+                // navigate('/', { replace: true })
+                navigate('/home', { replace: true })
             })
             .catch((error) => {
                 const errorCode = error.code;
