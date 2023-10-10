@@ -25,7 +25,7 @@ export const VisuallyHiddenInput = styled('input')({
 });
 
 
-export function NewEventForm({ handleClose }) {
+export function NewEventForm({ handleClose, userEmail }) {
     const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState("");
     const [eventDate, setEventDate] = useState(dayjs(`${new Date().getMonth() + 1}-${new Date().getDate()}-${new Date().getFullYear()}`));
@@ -93,6 +93,7 @@ export function NewEventForm({ handleClose }) {
 
         //push to database
         addData({
+            userEmail,
             eventName: eventName,
             description: eventDescription,
             image: eventImage === '' ? "https://via.placeholder.com/404" : eventImage,

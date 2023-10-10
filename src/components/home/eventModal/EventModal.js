@@ -4,14 +4,14 @@ import { Button, IconButton, Slide } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { EventEditForm } from '../../event_edit_form/event_edit_form';
-import { deleteDocument } from '../../../firestore/firestore';
+import { addData, deleteDocument } from '../../../firestore/firestore';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const EventModal = ({ event, closeModal }) => {
+const EventModal = ({ event, closeModal, email }) => {
     const [open, setOpen] = useState(false);
     const [updateData, setUpdatedData] = useState(event)
 
@@ -30,6 +30,24 @@ const EventModal = ({ event, closeModal }) => {
         deleteDocument(event.id)
         closeModal()
     }
+
+
+    function handleSubmit() {
+
+        addData({
+            eventName: event.eventName,
+            description: event.description,
+            location: event.location,
+            date: event.date,
+            time: event.time,
+            email
+        }, "bookedEvents")
+
+        // if valid, close dialog
+        handleClose();
+    }
+
+    console.log(email)
 
     return (
         <>
@@ -55,8 +73,7 @@ const EventModal = ({ event, closeModal }) => {
                     <p><strong>Location:</strong> {event.location}</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                         <Button variant='contained' color='error' onClick={closeModal}>Close</Button>
-                        <Button variant='contained' color='success' >Book Ticket</Button>
-                        {/* TODO:button to pay */}
+                        <Button variant='contained' color='success' onClick={handleSubmit}>Book Ticket</Button>
                     </div>
                 </div>
             </div>

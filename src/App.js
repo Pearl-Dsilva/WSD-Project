@@ -9,6 +9,7 @@ import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { auth } from './firestore/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
+import Booked from './components/bookedEvents/bookedEvents';
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
       <Route path="/signup" element={<Signup auth={auth} />} />
       <Route path="/" element={<Landing auth={auth} />} />
       {/* <Route path="/landing" element={<Landing auth={auth} />} /> */}
+      <Route path="/booked" element={<Booked auth={auth} />} />
     </Routes>
   )
 };

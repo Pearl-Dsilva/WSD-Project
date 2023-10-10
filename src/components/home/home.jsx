@@ -8,6 +8,7 @@ import { NewEventForm } from './NewEventForm';
 import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
+import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
 
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -62,6 +63,9 @@ export default function Home({ auth }) {
         setOpen(true);
     }
 
+    const booked = () => {
+        navigate("/booked", { replace: true })
+    }
     const logout = () => {
         signOut(auth).then(() => {
             navigate("/login", { replace: true })
@@ -74,6 +78,9 @@ export default function Home({ auth }) {
                 <div className="Hero" style={{ display: 'flex' }}>
                     <h1 style={{ flex: 1 }}>Events at Christ</h1>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton aria-label="bookedEvents" onClick={booked}>
+                            <CalendarMonthSharpIcon color="action" />
+                        </IconButton>
                         <IconButton aria-label="logout" onClick={logout}>
                             <LogoutIcon color="action" />
                         </IconButton>
@@ -111,12 +118,12 @@ export default function Home({ auth }) {
                         </AppBar>
                         <List style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
 
-                            <NewEventForm handleClose={handleClose} />
+                            <NewEventForm handleClose={handleClose} userEmail={auth.currentUser.email} />
                         </List>
                     </Dialog>
                     <EventGallery events={events} openModal={openModal} />
                     {selectedEvent && (
-                        <EventModal event={selectedEvent} closeModal={closeModal} handleOpen={handleOpen} />
+                        <EventModal event={selectedEvent} closeModal={closeModal} handleOpen={handleOpen} email={auth.currentUser.email} />
                     )}
                     <Fab color="inherit" aria-label="add" style={{
                         right: 20,

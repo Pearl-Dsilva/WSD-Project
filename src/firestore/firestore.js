@@ -44,9 +44,17 @@ async function getAllDataFromCollection(collectionName) {
     return querySnapshot;
 }
 
+async function getAllDataFromCollectionFiltered(collectionName, email) {
+    console.log(email)
+    const q = query(collection(db, collectionName), where("email", "==", email))
+    const querySnapshot = await getDocs(q);
+    console.log("Data Acquired")
+    return querySnapshot;
+}
+
 async function deleteDocument(document_id) {
     await deleteDoc(doc(db, "events", document_id));
 }
 
 // export default addData;
-export { addData, getAllDataFromCollection, auth, updateData, deleteDocument };
+export { addData, getAllDataFromCollection, auth, updateData, deleteDocument, getAllDataFromCollectionFiltered };
