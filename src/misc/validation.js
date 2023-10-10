@@ -20,9 +20,6 @@ function isValidEmail(email) {
     return new RegExp("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$").test(email);
 }
 
-// function isEmailAlreadyExists(email){
-
-// }
 
 function isValidPassword(password) {
     if (password.length < 8) return ({ result: false, message: "Password Length is less than 8" })
@@ -34,8 +31,12 @@ function isValidPassword(password) {
 }
 
 function isPasswordMatch(password, confirmPassword) {
-    if (!password === confirmPassword) return ({ result: false, message: "Password does not match" })
-    return { result: true, message: "" }
+    console.log(password)
+    console.log(confirmPassword)
+    console.log(password === confirmPassword)
+
+    if (password === confirmPassword) return ({ result: true, message: "" })
+    return { result: false, message: "Password does not match" }
 }
 
 

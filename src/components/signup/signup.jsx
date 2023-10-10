@@ -34,10 +34,10 @@ export default function Signup({ auth }) {
             handleOpen(cofirmPasswordValidation.message)
             return;
         }
-        // TODO:
+
         const passwordMatch = isPasswordMatch(password, confirmPassword)
         if (!passwordMatch.result) {
-            handleOpen(cofirmPasswordValidation.message)
+            handleOpen(passwordMatch.message)
             return;
         }
         // console.log("reched hereeee")

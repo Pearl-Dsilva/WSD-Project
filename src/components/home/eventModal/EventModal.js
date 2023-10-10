@@ -55,7 +55,8 @@ const EventModal = ({ event, closeModal }) => {
                     <p><strong>Location:</strong> {event.location}</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
                         <Button variant='contained' color='error' onClick={closeModal}>Close</Button>
-                        <Button variant='contained' color='success'>Book Ticket</Button>
+                        <Button variant='contained' color='success' >Book Ticket</Button>
+                        //TODO:button to pay
                     </div>
                 </div>
             </div>
