@@ -17,8 +17,8 @@ function Contact() {
             <img src={logo} alt="Logo" /> {/* Replace 'your-logo.png' with your logo's URL or file path */}
           </div>
           <div className="navbar-right">
-            <a href="#"><i className="fas fa-sign-in-alt"></i> Login</a>
-            <a href="#"><i className="fas fa-user-plus"></i> Sign Up</a>
+            <a href="login"><i className="fas fa-sign-in-alt"></i> Login</a>
+            <a href="signup"><i className="fas fa-user-plus"></i> Sign Up</a>
           </div>
         </div>
       </nav>
