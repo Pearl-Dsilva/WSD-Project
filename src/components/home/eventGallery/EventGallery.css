@@ -11,17 +11,16 @@
     text-align: center;
     color: white;
     width: 450px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
 
-.EventCard img {
+/* .EventCard img {
     max-width: 100%;
     height: auto;
-    width: 640px;
-    height: 426px;
     background-size: cover;
-}
+} */
 
 /* Add styles for event cards here */

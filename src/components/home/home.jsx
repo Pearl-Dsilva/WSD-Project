@@ -125,7 +125,7 @@ export default function Home({ auth }) {
                     {selectedEvent && (
                         <EventModal event={selectedEvent} closeModal={closeModal} handleOpen={handleOpen} email={auth.currentUser.email} />
                     )}
-                    <Fab color="inherit" aria-label="add" style={{
+                    <Fab color="default" aria-label="add" style={{
                         right: 20,
                         bottom: 20,
                         position: 'fixed',
