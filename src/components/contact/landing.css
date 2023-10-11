@@ -1,0 +1,275 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    /* Use Inter as the primary font */
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Navigation bar styles */
+/* ... (previous styles) ... */
+
+/* Navbar styles */
+.navbar {
+    background-color: rgba(34, 34, 34, 0.7);
+    /* Make the navbar slightly transparent */
+    /* position: fixed; */
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left img {
+    height: 40px;
+    /* Adjust the height to fit your logo */
+    margin-right: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #343536;
+    /* Border color */
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #515151;
+    /* Button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.search-bar button:hover {
+    background-color: #000000;
+    /* Hover color */
+}
+
+.navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* ... (previous styles) ... */
+
+
+/* Landing page content styles */
+.landing-content {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.transparent-div {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.transparent-div h1 {
+    font-size: 48px;
+}
+
+
+/*Contact page styles*/
+.page-container {
+    padding-top: 60px;
+    margin-bottom: 100px;
+    padding-bottom: 35%;
+}
+
+.contact-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0px;
+    /* align-items: flex-start; */
+    align-items: center;
+    padding: 20px;
+    margin-top: 20%;
+    gap: 30px;
+}
+
+
+
+.contact-form h2 {
+    font-size: 48px;
+    /* Adjust the font size as needed */
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #000;
+}
+
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #000;
+}
+
+button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    /* Hover color */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    position: relative;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/*Contact page styles ends here*/
+
+
+/* Footer styles */
+/* ... (previous styles) ... */
+
+/* Footer styles with the same opacity as the header */
+.footer {
+    width: 100%;
+    height: 10%;
+    background-color: rgba(77, 75, 75, 0.2);
+    /* Adjust the opacity (0.7) as needed */
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center the content */
+    align-items: center;
+    /* Horizontally center the content */
+    padding: 20px;
+    min-height: 200px;
+    /* Adjust the minimum height as needed */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 350px;
+}
+
+.footer-left,
+.footer-right,
+.footer-center {
+    flex: 1;
+}
+
+.footer-row {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-center .footer-row {
+    display: flex;
+    align-items: center;
+}
+
+.footer-center img {
+    margin-right: 30px;
+    /*Space between icons*/
+    height: 20%;
+    /* Adjust the height to fit your social media icons */
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.7;
+    /* Adjust the opacity as needed */
+    flex-grow: 1;
+}
+
+/* ... (previous styles) ... */

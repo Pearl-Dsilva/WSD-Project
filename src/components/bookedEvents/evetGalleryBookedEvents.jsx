@@ -1,5 +1,5 @@
 import React from 'react';
-import '../home/eventGallery/EventGallery.css';
+import './evetGalleryBookedEvents.css';
 import { Button } from '@mui/material';
 
 const EventGalleryBookedEvents = ({ events, openModal }) => {

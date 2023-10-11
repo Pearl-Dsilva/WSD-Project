@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../home/eventModal/EventModal.css';
+import './EventModalBookedEvents.css';
 import { Button, IconButton, Slide } from '@mui/material';
 // import { addData, deleteDocument } from '../../../firestore/firestore';
 

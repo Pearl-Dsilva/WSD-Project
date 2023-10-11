@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { auth } from './firestore/firestore';
 import { onAuthStateChanged } from 'firebase/auth';
 import Booked from './components/bookedEvents/bookedEvents';
+import Contact from './components/contact/contact';
 
 
 const App = () => {
@@ -47,6 +48,8 @@ const App = () => {
       <Route path="/" element={<Landing auth={auth} />} />
       {/* <Route path="/landing" element={<Landing auth={auth} />} /> */}
       <Route path="/booked" element={<Booked auth={auth} />} />
+      <Route path="/contact" element={<Contact auth={auth} />} />
+
     </Routes>
   )
 };

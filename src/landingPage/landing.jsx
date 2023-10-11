@@ -8,24 +8,38 @@ import Twitter from './images/TwitterX.png';
 import Email from './images/Email.png';
 import Instagram from './images/Instagram.png';
 
+import { IconButton } from '@mui/material';
+import CallToActionIcon from '@mui/icons-material/CallToAction';
 
+import { useNavigate } from 'react-router-dom';
 
 function Landing() {
 
   const divStyle = {
-    backgroundImage: `url(${bgimage})`, // Use the imported image in the background-image property
-    // Other CSS styles for your component
+    backgroundImage: `url(${bgimage})`,
+
   };
+
+  const navigate = useNavigate();
+
+  const contact = () => {
+    navigate("/contact", { replace: true })
+  }
   return (
     <div className="App" style={divStyle}>
       <nav className="navbar">
         <div className="navbar-content">
           <div className="navbar-left">
-            <img src={logo} alt="Logo" /> {/* Replace 'your-logo.png' with your logo's URL or file path */}
+            <img src={logo} alt="Logo" />
           </div>
           <div className="navbar-right">
+            {/* <IconButton aria-label="home" onClick={contact}>
+              <CallToActionIcon color="action" />
+            </IconButton> */}
             <a href="/login"><i className="fas fa-sign-in-alt" ></i> Login</a>
+            <a href="/contact"><i class="fa fa-address-card" aria-hidden="true"></i> Contact</a>
             <a href="/signup"><i className="fas fa-user-plus"></i> Sign Up</a>
+
           </div>
         </div>
       </nav>

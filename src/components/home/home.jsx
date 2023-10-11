@@ -9,6 +9,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CloseIcon from '@mui/icons-material/Close';
 import LogoutIcon from '@mui/icons-material/Logout';
 import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
+import CallToActionIcon from '@mui/icons-material/CallToAction';
 
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -71,6 +72,9 @@ export default function Home({ auth }) {
             navigate("/login", { replace: true })
         })
     }
+    const contact = () => {
+        navigate("/contact", { replace: true })
+    }
 
     return (
         <div className="App">
@@ -78,6 +82,9 @@ export default function Home({ auth }) {
                 <div className="Hero" style={{ display: 'flex' }}>
                     <h1 style={{ flex: 1 }}>Events at Christ</h1>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton aria-label="home" onClick={contact}>
+                            <CallToActionIcon color="action" />
+                        </IconButton>
                         <IconButton aria-label="bookedEvents" onClick={booked}>
                             <CalendarMonthSharpIcon color="action" />
                         </IconButton>

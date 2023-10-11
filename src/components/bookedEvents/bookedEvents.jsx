@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { getAllDataFromCollection, getAllDataFromCollectionFiltered } from '../../firestore/firestore';
-import { AppBar, Button, Dialog, Fab, IconButton, List, Slide, Toolbar, Typography } from '@mui/material';
+import { getAllDataFromCollectionFiltered } from '../../firestore/firestore';
+import { IconButton, Slide, } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import HomeIcon from '@mui/icons-material/Home';
+import CallToActionIcon from '@mui/icons-material/CallToAction';
 
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
@@ -11,10 +12,6 @@ import '../home/home.css';
 import EventGalleryBookedEvents from './evetGalleryBookedEvents';
 import EventModalBookedEvents from './eventModalBookedEvents';
 
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-    return <Slide direction="up" ref={ref} {...props} />;
-});
 
 export default function Booked({ auth }) {
     const [selectedEvent, setSelectedEvent] = useState(null);
@@ -73,6 +70,9 @@ export default function Booked({ auth }) {
     const home = () => {
         navigate("/home", { replace: true })
     }
+    const contact = () => {
+        navigate("/contact", { replace: true })
+    }
     console.log(auth)
     return (
         <div className="App">
@@ -80,6 +80,9 @@ export default function Booked({ auth }) {
                 <div className="Hero" style={{ display: 'flex' }}>
                     <h1 style={{ flex: 1 }}>Events at Christ</h1>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
+                        <IconButton aria-label="home" onClick={contact}>
+                            <CallToActionIcon color="action" />
+                        </IconButton>
                         <IconButton aria-label="home" onClick={home}>
                             <HomeIcon color="action" />
                         </IconButton>
