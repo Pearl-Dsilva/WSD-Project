@@ -8,7 +8,7 @@ const EventGallery = ({ events, openModal }) => {
         <div className="EventGallery">
             {events.map((event, index) => (
                 <div className="EventCard" key={index}>
-                    <img src={event.image} alt={event.eventName} style={{ maxHeight: '404px', maxWidth: '404px', minHeight: '404px', minWidth: '404px' }} />
+                    <img src={event.image} alt={event.eventName} style={{ maxHeight: '400px', maxWidth: '400px' }} />
                     <h2>{event.eventName}</h2>
                     <p>Date: {event.date}</p>
                     <Button variant='contained' style={{ backgroundColor: 'lightseagreen' }} onClick={() => openModal(event)}>Read More</Button>
