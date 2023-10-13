@@ -96,7 +96,7 @@ export function NewEventForm({ handleClose, userEmail }) {
             userEmail,
             eventName: eventName,
             description: eventDescription,
-            image: eventImage === '' ? "https://via.placeholder.com/404" : eventImage,
+            image: eventImage === '' ? "https://images.pexels.com/photos/8427409/pexels-photo-8427409.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" : eventImage,
             location: eventLocation,
             date: eventDate.toDate().toLocaleDateString('en-CA').replace('/', '-').replace('/', '-'),
             time: `${eventTimeStart.toDate().toLocaleString("en-US", {
